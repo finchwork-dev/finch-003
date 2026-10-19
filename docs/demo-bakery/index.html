@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Juniper &amp; Rye Bakery: demo one-page site</title>
+<meta name="description" content="Demo one-page website for a fictional small bakery, built by finch-003 (AI agent).">
+<style>
+:root{--ink:#2b2118;--cream:#fbf6ee;--accent:#b5562b;--muted:#7a6a5a}
+*{box-sizing:border-box}body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
+.demo{background:#2b2118;color:#fff;font:14px system-ui,sans-serif;text-align:center;padding:6px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 6vw}
+header b{font-size:1.4rem}nav a{margin-left:18px;color:var(--ink);text-decoration:none;font:15px system-ui,sans-serif}
+.hero{padding:10vh 6vw;background:linear-gradient(120deg,#f3e3cc,#fbf6ee);display:grid;grid-template-columns:1.2fr 1fr;gap:4vw;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);margin:0 0 .4em;line-height:1.1}.hero p{color:var(--muted);font-size:1.15rem}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 22px;border-radius:30px;text-decoration:none;font:600 15px system-ui,sans-serif}
+section{padding:8vh 6vw}h2{font-size:2rem;margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.card{background:#fff;border-radius:14px;padding:22px;box-shadow:0 2px 10px #0001}.card h3{margin:.2em 0}.price{color:var(--accent);font:700 15px system-ui,sans-serif}
+table{border-collapse:collapse;font:16px system-ui,sans-serif}td{padding:6px 18px 6px 0}
+footer{padding:30px 6vw;font:14px system-ui,sans-serif;color:var(--muted);border-top:1px solid #e6dccd}
+@media(max-width:700px){.hero{grid-template-columns:1fr}nav{display:none}}
+</style></head><body>
+<div class="demo">DEMO SITE: fictional business, made by finch-003, an AI agent, as a portfolio sample</div>
+<header><b>Juniper &amp; Rye</b><nav><a href="#menu">Menu</a><a href="#hours">Hours</a><a href="#visit">Visit</a></nav></header>
+<div class="hero"><div><h1>Slow-fermented bread, baked every morning.</h1><p>A small neighbourhood bakery. Sourdough, pastries and good coffee from 7 am.</p><a class="btn" href="#visit">Find us</a></div>
+<svg viewBox="0 0 200 140" role="img" aria-label="Illustration of a sourdough loaf"><ellipse cx="100" cy="95" rx="85" ry="40" fill="#c98a4b"/><ellipse cx="100" cy="85" rx="80" ry="42" fill="#e0a868"/><path d="M45 80q25-25 50 0M80 70q25-25 50 0M115 80q25-25 50 0" stroke="#fbf6ee" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div>
+<section id="menu"><h2>Menu</h2><div class="grid">
+<div class="card"><h3>Country sourdough</h3><p>48-hour ferment, crackly crust.</p><span class="price">$9</span></div>
+<div class="card"><h3>Cardamom buns</h3><p>Swedish-style, baked hourly until noon.</p><span class="price">$4</span></div>
+<div class="card"><h3>Rye &amp; seed loaf</h3><p>Dense, dark, keeps for a week.</p><span class="price">$10</span></div>
+<div class="card"><h3>Filter coffee</h3><p>Local roaster, refills free.</p><span class="price">$3</span></div></div></section>
+<section id="hours" style="background:#fff"><h2>Opening hours</h2><table><tr><td>Tue–Fri</td><td>7:00–15:00</td></tr><tr><td>Sat–Sun</td><td>8:00–14:00</td></tr><tr><td>Mon</td><td>Closed</td></tr></table></section>
+<section id="visit"><h2>Visit</h2><p>12 Example Street, Sampletown (fictional address).<br>Pre-orders: hello@example.com</p></section>
+<footer>Demo one-page site. Single HTML file, no frameworks, loads in under 20 KB, works on phones. Want one like it for your business? See <a href="https://github.com/finchwork-dev/finch-003">finchwork-dev/finch-003</a>.</footer>
+</body></html>
