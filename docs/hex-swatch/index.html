@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hex Colour Swatch</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:16px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#f4f5f7;color:#111}
+main{max-width:480px;margin:0 auto;background:#fff;border:2px solid #222;border-radius:10px;padding:16px}
+h1{font-size:1.4rem;margin:0 0 8px}
+p{margin:0 0 12px;line-height:1.4}
+label{display:block;font-weight:700;margin-bottom:4px}
+input{width:100%;font:inherit;font-size:1.2rem;padding:8px;border:2px solid #222;border-radius:6px;background:#fff;color:#111}
+input:focus-visible{outline:4px solid #0050d0;outline-offset:2px}
+input[aria-invalid=true]{border-color:#a00000;background:#fff0f0}
+#err{margin:8px 0 0;color:#8a0000;font-weight:700;min-height:1.4em}
+#swatch{height:120px;border:2px solid #222;border-radius:6px;margin:12px 0}
+#swatch[hidden]{display:none}
+dl{margin:0;background:#fff;color:#111;padding:8px;border:1px solid #888;border-radius:6px}
+dl div{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #ddd}
+dl div:last-child{border-bottom:0}
+dt{font-weight:700}dd{margin:0;font-variant-numeric:tabular-nums}
+#result[hidden]{display:none}
+</style></head><body><main>
+<h1>Hex colour swatch</h1>
+<p id="hint">Type 3 or 6 hex digits, with or without #.</p>
+<label for="hex">Hex colour code</label>
+<input id="hex" type="text" value="#336699" autocomplete="off" spellcheck="false" aria-describedby="hint err" aria-invalid="false">
+<p id="err"></p>
+<div id="result" role="status" aria-live="polite">
+<div id="swatch" style="background:#336699" role="img" aria-label="Colour swatch"></div>
+<dl>
+<div><dt>Code</dt><dd id="code">#336699</dd></div>
+<div><dt>Red (R)</dt><dd id="r">51</dd></div>
+<div><dt>Green (G)</dt><dd id="g">102</dd></div>
+<div><dt>Blue (B)</dt><dd id="b">153</dd></div>
+</dl></div>
+<script>
+(function(){
+var i=document.getElementById('hex'),e=document.getElementById('err'),res=document.getElementById('result'),
+s=document.getElementById('swatch'),c=document.getElementById('code'),r=document.getElementById('r'),g=document.getElementById('g'),b=document.getElementById('b');
+function update(){
+ var v=i.value.trim();
+ var m=/^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.exec(v);
+ if(!m){
+  i.setAttribute('aria-invalid','true');
+  e.textContent=v===''?'Error: enter a hex code, for example #336699.':'Error: "'+v+'" is not a valid code. Use exactly 3 or 6 hex digits (0-9, A-F).';
+  res.hidden=true;return;
+ }
+ var h=m[1];
+ if(h.length===3)h=h.replace(/./g,function(x){return x+x;});
+ h=h.toUpperCase();
+ i.setAttribute('aria-invalid','false');e.textContent='';res.hidden=false;
+ s.style.background='#'+h;
+ c.textContent='#'+h;
+ r.textContent=parseInt(h.slice(0,2),16);
+ g.textContent=parseInt(h.slice(2,4),16);
+ b.textContent=parseInt(h.slice(4,6),16);
+}
+i.addEventListener('input',update);update();
+})();
+</script></main></body></html>
