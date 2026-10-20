@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Meetup Name — Event Page</title>
+<style>
+:root{--bg:#120d1f;--ink:#f6f1ff;--mute:#b3a8d1;--a:#ff5d8f;--b:#ffd166;--card:#1d1533}
+*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}.w{max-width:960px;margin:0 auto;padding:0 22px}
+.hero{padding:90px 0 60px;text-align:center;background:radial-gradient(700px 320px at 50% 0,#4a1f6e,transparent 70%)}
+.k{color:var(--b);letter-spacing:.2em;text-transform:uppercase;font-size:.8rem;font-weight:700}
+h1{font-size:clamp(2.4rem,8vw,5rem);line-height:1;margin:14px 0;letter-spacing:-.03em}h1 span{color:var(--a)}
+.meta{color:var(--mute);font-size:1.1rem}.btn{display:inline-block;margin-top:26px;background:var(--a);color:#fff;padding:14px 30px;border-radius:10px;font-weight:700;text-decoration:none}
+.cd{display:flex;gap:14px;justify-content:center;margin-top:34px}.cd div{background:var(--card);border-radius:12px;padding:14px 18px;min-width:78px}.cd b{display:block;font-size:2rem}.cd small{color:var(--mute);font-size:.75rem;text-transform:uppercase}
+section{padding:56px 0}h2{font-size:1.8rem;margin:0 0 26px;letter-spacing:-.02em}
+.sch{border-left:2px solid #3a2b5e}.it{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:14px 0 14px 22px;position:relative}.it:before{content:"";position:absolute;left:-6px;top:22px;width:10px;height:10px;border-radius:50%;background:var(--a)}
+.it time{color:var(--b);font-weight:700}.it p{margin:0;color:var(--mute)}
+.sp{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.sp div{background:var(--card);border-radius:14px;padding:22px;text-align:center}.av{width:72px;height:72px;border-radius:50%;margin:0 auto 12px;background:linear-gradient(135deg,var(--a),var(--b))}.sp p{margin:0;color:var(--mute);font-size:.9rem}
+.venue{background:var(--card);border-radius:16px;padding:30px;display:grid;gap:20px;grid-template-columns:1fr 1fr}@media(max-width:640px){.venue{grid-template-columns:1fr}.it{grid-template-columns:70px 1fr}}
+.map{min-height:160px;border-radius:12px;background:repeating-linear-gradient(0deg,#2a2047 0 1px,transparent 1px 28px),repeating-linear-gradient(90deg,#2a2047 0 1px,transparent 1px 28px),#231a3d;display:grid;place-items:center;color:var(--mute)}
+form{display:grid;gap:12px;max-width:440px;margin:0 auto}input{padding:13px 16px;border-radius:10px;border:1px solid #3a2b5e;background:var(--bg);color:var(--ink);font:inherit}
+footer{text-align:center;color:var(--mute);padding:40px 0;font-size:.9rem}
+</style></head><body>
+<header class="hero"><div class="w"><div class="k">Saturday · City Name</div><h1>Meetup <span>Name</span></h1><div class="meta">Date · 10:00–17:00 · Venue name</div><a class="btn" href="#rsvp">Reserve a seat</a>
+<div class="cd"><div><b id="d">0</b><small>Days</small></div><div><b id="h">0</b><small>Hours</small></div><div><b id="m">0</b><small>Min</small></div></div></div></header>
+<section><div class="w"><h2>Schedule</h2><div class="sch">
+<div class="it"><time>10:00</time><div><b>Doors open</b><p>Coffee and registration.</p></div></div>
+<div class="it"><time>10:30</time><div><b>Opening talk</b><p>One-line description of the talk.</p></div></div>
+<div class="it"><time>12:00</time><div><b>Lunch</b><p>Networking break.</p></div></div>
+<div class="it"><time>14:00</time><div><b>Workshop</b><p>Hands-on session.</p></div></div>
+<div class="it"><time>16:30</time><div><b>Closing</b><p>Wrap-up and next steps.</p></div></div></div></div></section>
+<section><div class="w"><h2>Speakers</h2><div class="sp"><div><div class="av"></div><b>Speaker One</b><p>Role · Company</p></div><div><div class="av"></div><b>Speaker Two</b><p>Role · Company</p></div><div><div class="av"></div><b>Speaker Three</b><p>Role · Company</p></div></div></div></section>
+<section><div class="w"><h2>Venue</h2><div class="venue"><div><b>Venue name</b><p style="color:var(--mute)">Street address, City. Add transit and parking notes here.</p></div><div class="map">Embed your map here</div></div></div></section>
+<section id="rsvp"><div class="w"><h2 style="text-align:center">RSVP</h2><form onsubmit="event.preventDefault();this.querySelector('button').textContent='See you there!'"><input placeholder="Your name" aria-label="Name" required><input type="email" placeholder="Email" aria-label="Email" required><button class="btn" style="border:0;cursor:pointer;font:inherit;font-weight:700;margin:0">Reserve</button></form><p style="text-align:center;color:var(--mute);font-size:.85rem">Demo form: connect it to your form service (Formspree, Netlify Forms).</p></div></section>
+<footer>© Meetup Name · Template prepared by an AI agent</footer>
+<script>var t=new Date();t.setDate(t.getDate()+30);t.setHours(10,0,0,0);function u(){var s=Math.max(0,t-new Date())/1000;d.textContent=Math.floor(s/86400);h.textContent=Math.floor(s%86400/3600);m.textContent=Math.floor(s%3600/60)}u();setInterval(u,30000)</script></body></html>

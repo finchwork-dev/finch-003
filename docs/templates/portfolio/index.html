@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Your Name — Designer & Developer</title>
+<style>
+:root{--bg:#faf7f2;--ink:#1d1b18;--mute:#6f6a62;--a:#e4572e;--line:#e6dfd3}
+*{box-sizing:border-box}body{margin:0;font:17px/1.65 Georgia,'Times New Roman',serif;background:var(--bg);color:var(--ink)}
+.s{font-family:system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit}.w{max-width:960px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;padding:28px 0;font-family:system-ui,sans-serif;font-size:.95rem}header a{text-decoration:none;margin-left:20px;color:var(--mute)}header a:hover{color:var(--a)}
+.hero{padding:70px 0 50px}.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);line-height:1.05;margin:0 0 20px;letter-spacing:-.02em;font-weight:400}.hero h1 em{color:var(--a)}
+.hero p{max-width:560px;color:var(--mute);font-size:1.15rem}
+.tags{font-family:system-ui,sans-serif;display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.tags span{border:1px solid var(--line);padding:5px 14px;border-radius:99px;font-size:.85rem;color:var(--mute)}
+h2{font-family:system-ui,sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:.14em;color:var(--mute);border-top:1px solid var(--line);padding-top:18px;margin:64px 0 26px}
+.work{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.pj{text-decoration:none}.th{aspect-ratio:4/3;border-radius:6px;margin-bottom:12px;transition:transform .25s}.pj:hover .th{transform:translateY(-4px)}
+.t1{background:linear-gradient(135deg,#e4572e,#f3a712)}.t2{background:linear-gradient(135deg,#29335c,#5c7aea)}.t3{background:conic-gradient(from 90deg,#a8c686,#669bbc,#e4572e,#a8c686)}.t4{background:repeating-linear-gradient(45deg,#1d1b18 0 12px,#33302b 12px 24px)}
+.pj h3{margin:0;font-weight:400;font-size:1.25rem}.pj p{margin:0;color:var(--mute);font-family:system-ui,sans-serif;font-size:.9rem}
+.about{display:grid;gap:30px;grid-template-columns:1fr 1fr}@media(max-width:700px){.about{grid-template-columns:1fr}}
+.list{font-family:system-ui,sans-serif;list-style:none;padding:0;margin:0}.list li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.list span{color:var(--mute)}
+.contact{padding:30px 0 80px}.contact a{font-size:clamp(1.6rem,5vw,3rem);color:var(--a);text-decoration:none;border-bottom:2px solid var(--a)}
+footer{font-family:system-ui,sans-serif;font-size:.85rem;color:var(--mute);padding:26px 0;border-top:1px solid var(--line)}
+</style></head><body><div class="w">
+<header><b>Your Name</b><nav><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
+<section class="hero"><h1>I design and build <em>calm, useful</em> things for the web.</h1><p>Two sentences about who you are, what you do and who you do it for. Replace these placeholders with your own words.</p><div class="tags"><span>Brand identity</span><span>Web design</span><span>Front-end</span></div></section>
+<h2 id="work">Selected work</h2><div class="work">
+<a class="pj" href="#"><div class="th t1"></div><h3>Project one</h3><p>Branding · 2025</p></a><a class="pj" href="#"><div class="th t2"></div><h3>Project two</h3><p>Website · 2025</p></a>
+<a class="pj" href="#"><div class="th t3"></div><h3>Project three</h3><p>App design · 2024</p></a><a class="pj" href="#"><div class="th t4"></div><h3>Project four</h3><p>Packaging · 2024</p></a></div>
+<h2 id="about">About</h2><div class="about"><p>A short paragraph about your story, your approach and what it is like to work with you. Swap the gradient thumbnails above for your own images: replace the div with an &lt;img&gt; tag.</p>
+<ul class="list"><li>2023–now <span>Role, Company</span></li><li>2020–2023 <span>Role, Company</span></li><li>2016–2020 <span>Degree, School</span></li></ul></div>
+<h2 id="contact">Contact</h2><div class="contact"><a href="mailto:hello@example.com">hello@example.com</a></div>
+<footer>© <span id="y"></span> Your Name · Template prepared by an AI agent<script>document.getElementById('y').textContent=new Date().getFullYear()</script></footer></div></body></html>
