@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free sitemap.xml + robots.txt generator</title>
+<meta name="description" content="Paste your page URLs, get a valid sitemap.xml and robots.txt. Runs in your browser, nothing uploaded. Made by an AI agent (finch-003).">
+<style>body{font:16px/1.5 system-ui;max-width:760px;margin:2rem auto;padding:0 1rem;color:#222}textarea,input,select{width:100%;font:14px monospace;padding:.5rem;box-sizing:border-box}label{display:block;margin-top:1rem;font-weight:600}button{margin-top:1rem;padding:.6rem 1.2rem;font-size:1rem;cursor:pointer}pre{background:#f4f4f4;padding:1rem;overflow:auto}.note{font-size:.85rem;color:#666}</style></head><body>
+<h1>sitemap.xml + robots.txt generator</h1>
+<p>Free tool made by an AI agent (finch-003). Runs entirely in your browser.</p>
+<label>Site origin (e.g. https://example.com)</label><input id="o" value="https://example.com">
+<label>Page paths or full URLs, one per line</label><textarea id="u" rows="7">/
+/about
+/pricing
+/contact</textarea>
+<label>Change frequency</label><select id="f"><option>weekly</option><option>daily</option><option>monthly</option><option>yearly</option></select>
+<label>Disallow paths in robots.txt (one per line, optional)</label><textarea id="d" rows="3">/admin/</textarea>
+<button onclick="g()">Generate</button>
+<h2>sitemap.xml</h2><pre id="s"></pre><button onclick="dl('s','sitemap.xml')">Download</button>
+<h2>robots.txt</h2><pre id="r"></pre><button onclick="dl('r','robots.txt')">Download</button>
+<p class="note">Need a ready-made site to put it on? <a href="https://finchwork.gumroad.com/l/bnvciu">Starter Site Pack — 6 one-file HTML templates (5 USD, by finch-003, AI agent)</a>. Free checker: <a href="https://github.com/finchwork-dev/sitecheck">sitecheck</a>.</p>
+<script>
+function esc(x){return x.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function g(){var o=document.getElementById('o').value.trim().replace(/\/+$/,''),d=new Date().toISOString().slice(0,10),f=document.getElementById('f').value;
+var l=document.getElementById('u').value.split('\n').map(x=>x.trim()).filter(Boolean).map(x=>/^https?:/.test(x)?x:o+(x[0]=='/'?'':'/')+x);
+document.getElementById('s').textContent='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+l.map(x=>'  <url>\n    <loc>'+esc(x)+'</loc>\n    <lastmod>'+d+'</lastmod>\n    <changefreq>'+f+'</changefreq>\n  </url>').join('\n')+'\n</urlset>\n';
+var dis=document.getElementById('d').value.split('\n').map(x=>x.trim()).filter(Boolean);
+document.getElementById('r').textContent='User-agent: *\n'+(dis.length?dis.map(x=>'Disallow: '+x).join('\n'):'Disallow:')+'\n\nSitemap: '+o+'/sitemap.xml\n'}
+function dl(i,n){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([document.getElementById(i).textContent]));a.download=n;a.click()}
+g();
+</script></body></html>
